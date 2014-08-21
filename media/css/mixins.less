@@ -1,0 +1,89 @@
+/*........................................................*\
+            TRANSITIONS
+\*........................................................*/
+
+.trans-bg{
+  transition:background .3s linear;
+  -webkit-transition:background .3s linear;
+  -moz-transition:background .3s linear;  
+  -o-transition:background .3s linear;
+}
+
+.trans-bg-clear{
+  transition:background 0s linear;
+  -webkit-transition:background 0s linear;
+  -moz-transition:background 0s linear;  
+  -o-transition:background 0s linear;
+}
+
+.trans-text {
+  transition:all .1s linear;
+  -webkit-transition:all .1s linear;
+  -moz-transition:all .1s linear;  
+  -o-transition:all .1s linear;
+}
+
+.trans-text-clear {
+  transition:all 0s linear;
+  -webkit-transition:all 0 linear;
+  -moz-transition:all 0s linear;  
+  -o-transition:all 0s linear;
+}
+
+/* Box-Sizing */ 
+
+.box-sizing {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+/*........................................................*\
+              Mixins
+\*........................................................*/
+.border-radius (@radius: 5px) { -webkit-border-radius: @radius; -moz-border-radius: @radius; border-radius: @radius; }
+.box-shadow (@hor: 3px, @vert: 2px, @blur: 5px, @shadow: #000) { -webkit-box-shadow: @hor @vert @blur @shadow; -moz-box-shadow: @hor @vert @blur @shadow; box-shadow: @hor @vert @blur @shadow; }
+.text-shadow (@hor: 3px, @vert: 2px, @blur: 5px, @shadow: #000) { text-shadow: @hor @vert @blur @shadow; }
+
+.clear-text-shadow { text-shadow: none; }
+.clear-box-shadow { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
+
+.hide { display: none; } 
+.show { display: block; }
+.invisible { visibility: hidden; }
+.left { float: left; }
+.right { float: right; }
+
+
+/* triangle / arrows */
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid @paars;
+}
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid @paars;
+}
+
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid @paars;
+}
+
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent; 
+  border-right:20px solid @paars; 
+}
