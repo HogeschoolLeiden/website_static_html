@@ -506,6 +506,21 @@ body {
       display:block;
       text-transform:uppercase;
     }
+    
+    &.large {
+          width:100px;
+          height:100px;
+          padding-top:30px;
+          .border-radius(50px);
+          font-size:2.143em;
+          line-height:0.733em;
+          
+          span {
+            font-size:0.633em;
+          }
+          
+          
+        }
         
 }
 
@@ -578,21 +593,6 @@ body {
        left:20px;
        top:20px;
        background:@blauw;
-        
-        &.large {
-          width:100px;
-          height:100px;
-          padding-top:30px;
-          .border-radius(50px);
-          font-size:2.143em;
-          line-height:0.733em;
-          
-          span {
-            font-size:0.633em;
-          }
-          
-          
-        }
         
       }
       
@@ -1093,6 +1093,23 @@ body {
         
       }
       
+      &.lichtpaars {
+        background:@lichtpaars;
+        color:@paars;
+        
+        .btn {
+          color:#fff;
+          border-color:@paars;
+          background-color:@paars;
+          
+          &:hover {
+            background:transparent;
+            color:@paars;
+          }
+        }
+        
+      }
+      
     }
     
     /* types of hover */
@@ -1100,6 +1117,79 @@ body {
        background:@paars!important;
     }
     
+    
+    &.info {
+      background:@lichtpaars!important;
+      position:relative;
+      overflow:visible;
+      width:100%;
+      width:calc(~"100% + 30px");
+      margin-left:-30px;
+      cursor:auto;
+      padding:30px 20px 70px 50px;
+      margin-bottom:50px;
+      
+      ul {
+        padding:0;
+        margin:0;
+        list-style-type:none;
+        
+        li {
+          clear:both;
+          position:relative;
+          padding-left:30px;
+          margin:0 0 5px 0;
+            
+          span {            
+            &.details {
+              .ss-r;
+            }
+            &.fa {
+              text-align:center;
+              font-size:1.429em;
+              position:absolute;
+              left:0;
+              top:0;
+              width:20px;
+              text-align:center;
+            }
+          
+          }
+          
+        }
+      }
+      
+      p {
+        font-size:1.143em;
+        .ss-l;
+        line-height:1.750em;
+      }
+      
+      .datum {
+        position:absolute;
+        left:-50px;
+        top:-60px;
+      }
+      
+      .btn {
+        left:50px;
+        bottom:30px;
+      }
+      
+      &:before {
+        content:"";
+        width:1px;
+        display:block;
+        position:absolute;
+        left:-3px;
+        top:0;
+        bottom:0;
+        border-left:dotted 8px @paars;
+        border-width:0 0 0 8px;
+        border-image: url('../img/border-dotted-vert-8-paars.png') 0 0 0 100% round;
+      }
+      
+    }
     
     &:first-of-type {
       margin-top:0;
@@ -1438,6 +1528,12 @@ footer {
     
   }
   
+  .blok {
+    &.info {
+      margin-left:0;
+    }
+  }
+  
 }
 
 @media (min-width:768px) {
@@ -1770,6 +1866,19 @@ footer {
       }
     }
   
+  .blok {
+    &.info {
+      width:auto;
+      
+      .datum {
+        left:auto;
+        right:20px;
+        top:-20px;
+      }
+      
+    }
+  }
+  
 }
 
 @media (max-width: 991px) and (orientation : portrait)  {
@@ -2031,7 +2140,7 @@ footer {
   margin-top:-274px;
   margin-bottom:-40px;
 }
- 
+
  /* highlight */
  .highlighted {
   float:right;
