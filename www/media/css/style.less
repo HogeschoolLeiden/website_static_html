@@ -678,7 +678,7 @@ body {
       margin:0 15px;
       
       .datum {
-        left:-170px;
+        
       }
       
     }
@@ -1750,6 +1750,19 @@ footer {
     margin:0;    
   }
 
+  .highlighted {
+    &.medium {
+      height:auto;
+      
+      .media-body {
+        .datum {
+          left:20px!important;
+        }
+      }
+    }  
+  }
+  
+  
   footer {
     .navlist {
       ul {
@@ -2234,6 +2247,19 @@ footer {
     }
   }
   
+  .highlighted {
+    &.medium {
+      float:none;
+      
+      .media-body {
+        .datum {
+          left:-120px;
+        }
+      }
+      
+    }
+  }
+  
 }
 
 @media (max-width: 991px) and (orientation : portrait)  {
@@ -2290,6 +2316,18 @@ footer {
         .datum {
           left:-50px;
           top:-60px;
+        }
+      }
+    }
+    
+    .highlighted {
+      &.medium {
+        
+        .media-body {
+          p {
+            max-height:80px;
+            overflow:hidden;
+          }
         }
       }
     }
@@ -2517,6 +2555,14 @@ footer {
       
     }
     
+    &.medium {
+      .media-body {
+        .datum {
+          left:-120px;
+        }
+      }
+    }
+    
   }
   
   footer {
@@ -2575,6 +2621,14 @@ footer {
         left:-462px;
       }
       
+    }
+    
+    &.medium {
+      .media-body {
+        .datum {
+          left:-170px;
+        }
+      }
     }
     
   }
