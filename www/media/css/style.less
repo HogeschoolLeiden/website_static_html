@@ -81,6 +81,21 @@ body {
   
 }
 
+/* ==========================================================================
+   MORE
+   ========================================================================== */
+.more {
+  color:@paars;
+  background:url("../img/more-arrow-16.png") right 5px no-repeat;
+  background-size:8px 8px;
+  padding-right:11px;
+  display:inline-block;
+  
+  &:hover {
+    color:@paars;
+  }
+   
+}
 
 /* ==========================================================================
    Header
@@ -626,20 +641,36 @@ body {
   }
   
   &.medium {
-     margin-right:25%;
-    width:50%;
-    height:225px;
-    margin-bottom:0;
+    height:194px;
+    float:left;
     
     .media-body {
-      width:63%;
+      float:right;
+      margin:0 15px;
       
       .datum {
-        left:-160px;
+        left:-170px;
       }
+      
     }
     
   }
+  
+  // &.medium {
+     // margin-right:25%;
+    // width:50%;
+    // height:225px;
+    // margin-bottom:0;
+//     
+    // .media-body {
+      // width:63%;
+//       
+      // .datum {
+        // left:-160px;
+      // }
+    // }
+//     
+  // }
   
 }
 
@@ -648,11 +679,20 @@ body {
    ========================================================================== */  
   .overzicht {
     float:right!important;
+  }
     
     .overzichtlijst {
       background:#fff;
       padding:10px;
     
+      & > h1 {
+        padding:10px;
+        color:@paars;
+        .ss-sb;
+        font-size:1.714em;
+        margin:0;
+      }
+      
       .media {
         padding:10px;
         margin-top:0;
@@ -699,6 +739,12 @@ body {
           height:100px;
           background:lighten(@paars, 5%);
           
+          img {
+            width:auto;
+            height:auto;
+            width:100%;
+          }
+          
           &.pull-left {
             margin-right:20px;
           }
@@ -721,9 +767,11 @@ body {
         }
       }
       
+      .more {
+        margin:15px 0 0 10px;
+      }
+      
     }
-    
-  }
   
   /* ==========================================================================
    CONTENT / detail pagina
@@ -1206,6 +1254,84 @@ body {
       }
       
     }
+    
+    &.contacts {
+      padding:0;
+      cursor:auto;
+      min-height:0;
+      
+      .contact {
+         border-top:1px solid #fff;
+         position:relative;
+         height:auto;
+         clear:both;
+         
+         &:after {
+           content:"";
+           display:block;
+           border-bottom:dotted 8px #fff;
+           border-width:0 0 8px 0;
+           border-image: url('../img/border-dotted-horz-8-wit.png') 0% 0% 100% 0 round;
+           width:auto;
+           position:absolute;
+           left:20px;
+           right:20px;
+           bottom:-4px;
+           z-index:0;
+          }
+          
+      }
+      
+      h1 {
+        font-size:1.143em;
+        text-transform:none;
+        padding-left:0;
+        padding-right:0;
+        height:50px;
+        &:after {
+          display:none;
+        }        
+      }
+      
+      figure {
+        text-align:center;
+        position:relative;
+        z-index:1;
+        
+        img {
+          .border-radius(50%);
+          margin-top:-30px;
+        }
+      }
+      
+      ul {
+        list-style-type:none;
+        margin:0;
+        padding-top:20px;
+        padding-bottom:20px;
+        
+        li {
+          h2 {
+            padding:0;
+            font-size:1.143em;
+            .ss-sb;
+          }
+          a {
+            color:@paars;
+            &:hover {
+              text-decoration:underline;
+            }
+          }
+        }
+        
+      }
+      
+      &:hover {
+        background-color:@lichtpaars!important;
+      }
+      
+    }
+    
     
     &:first-of-type {
       margin-top:0;
