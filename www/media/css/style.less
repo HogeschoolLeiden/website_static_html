@@ -1332,6 +1332,7 @@ body {
               margin-bottom:-2px;
               position:relative;
               top:1px;
+              font-size:0.95em;
             }
             
             &:hover {
@@ -1378,6 +1379,69 @@ body {
         }
       }
       
+    }
+    
+    &.beeldbank {
+      height:240px;
+      position:relative;
+      text-align:center;
+      
+        div {
+          width:33.333%;
+          height:120px;
+          overflow:hidden;
+          float:left;
+          text-align:center;
+          
+          img {
+            width:auto;
+            min-width:100%;
+            height:auto;
+            min-height:100%;
+            margin:0 auto;
+          }
+          
+          &.large {
+            width:66.666%;
+          }
+        }
+        
+        .icon-beeldbank {
+          width:100px;
+          height:100px;
+          text-align:center;
+          background:#fff;
+          color:@paars;
+          font-size:3.5em;
+          .border-radius(50%);
+          position:absolute;
+          left:50%;
+          top:40%;
+          margin:-50px 0 0 -50px;
+          display:block;
+          padding:25px;
+          background:url("/media/img/icon-beeldbank.png") center center no-repeat #fff;
+          background-size:50% 50%;
+        }
+        
+        .btn {
+          margin:0 auto;
+          .ss-l;
+          background:#fff;
+          color:@paars;
+          position:static;
+          margin-top:-160px;
+        }
+        
+        &:hover {
+            background-color:#fff!important;
+            .btn {
+              background:@paars;
+              color:#fff;
+            }
+        
+        }
+        
     }
     
     
