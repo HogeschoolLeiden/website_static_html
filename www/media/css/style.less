@@ -1297,10 +1297,51 @@ body {
         text-align:center;
         position:relative;
         z-index:1;
+        padding-bottom:35px;
         
         img {
           .border-radius(50%);
           margin-top:-30px;
+          width:100%;
+          height:auto;
+          max-width:60px;
+        }
+        
+        .social {
+          margin:3px auto 0 auto;
+          padding:0;
+          width:50px;
+          
+          li {
+            background:@paars;
+            width:20px;
+            height:20px;
+            display:inline;
+            padding:0;
+            overflow:hidden;
+            margin:0 -1px 0 0;
+            
+            a {
+              display:inline-block;
+              width:20px;
+              height:20px;
+              text-align:center;
+              color:#fff;
+              font-size:1em;
+              padding:0;
+              margin-bottom:-2px;
+              position:relative;
+              top:1px;
+            }
+            
+            &:hover {
+              background:@blauw;
+              
+              a {
+                text-decoration:none;
+              }
+            }
+          }
         }
       }
       
@@ -1328,6 +1369,13 @@ body {
       
       &:hover {
         background-color:@lichtpaars!important;
+      }
+     
+      .contact:last-child {
+        figure {
+          padding-bottom:20px;
+          
+        }
       }
       
     }
