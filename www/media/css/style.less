@@ -814,6 +814,9 @@ body {
           .media-object {
             text-align:center;
             display:flex;
+            display: -webkit-flexbox;
+            display: -ms-flexbox;
+            display: -webkit-flex;
             .border-radius(50%);
             background:@paars;
             
@@ -839,7 +842,9 @@ body {
    STUDIEFILTER / vindjestudie
    ========================================================================== */  
   .studiefilter {
+    background:@paars;
     background:rgba(35,17,76,0.9);
+    position:relative;
     
     .col-md-4 {
       padding-left:20px;
@@ -870,7 +875,7 @@ body {
         position:relative;
         padding-left:40px;
         
-        input {
+        input[type="checkbox"] {
           width:30px;
           height:30px;
           .border-radius(50%);
@@ -882,13 +887,44 @@ body {
           left:0;
           top:0;
         }
+        input[type="text"] {
+          height:30px;
+          width:100%;
+          font-size:0.857em;
+          .ss-r;
+          color:#fff;
+          background:none;
+          border:none;
+          margin-left:-30px;
+        }
+        .btn {
+          width:25%;
+          height:30px;
+          background:@lichtpaars;
+          color:@paars;
+          .border-radius(0px);
+          padding:0;
+          border:none;
+          font-size:1.357em;
+          margin-left:-15px;
+          position:absolute;
+          right:-20px;
+          top:0;
+          
+          span {
+            text-indent:-9999px;
+            display:inline-block;
+          }
+          
+        }
+        
         label {
           cursor:pointer;
           font-size:0.857em;
           .ss-r;
           color:#fff;
           display:block;
-          padding-top:4px;
+          padding-top:5px;
           
          &:before {
            content:"";
@@ -903,9 +939,81 @@ body {
           z-index:1;
          }
         }
+        
+        input[type="checkbox"] {
+          display:none;
+        }
+        input[type="checkbox"] + label {
+          &:before {
+            content:"";
+            width:30px;
+            height:30px;
+            background:@lichtpaars;
+            display:inline-block;
+          }
+        }
+        input[type="checkbox"]:checked + label {
+          &:before {
+            background:url("../img/check.png") center center no-repeat @lichtpaars;
+            background-size:20px 20px;
+          }
+        }
+        
+        &.tags {
+          .border-radius(15px);
+          position:relative;
+          font-size:0.857em;
+          .ss-sb;
+          color:#fff;
+          display:block;
+          padding-top:5px;
+          padding-left:10px;
+          color:@paars;
+          width:auto;
+          
+          .fa {
+            background:@lichtpaars;
+            width:30px;
+            height:30px;
+            .border-radius(15px);
+            text-align:center;
+            padding:9px 0;
+            color:@paars;
+            cursor:pointer;
+            position:absolute;
+            right:0;
+            top:0;
+          }
+          
+        }
+        
       }
     }
     
+    &:after {
+      content:"";
+      display:block;
+      border-bottom:dotted 8px #fff;
+      border-width:0 0 8px 0;
+      border-image: url('../img/border-dotted-horz-8-wit.png') 0% 0% 100% 0 round;
+      width:100%;
+      height:1px;
+      position:relative;
+      bottom:-5px;
+      
+    }
+    
+  }
+  
+  .lt-ie9 {
+    .studiefilter {
+      li {
+        input[type="checkbox"] {
+          display:block;
+          border:none;
+        }
+      }
+    }
   }
   
   
@@ -1082,7 +1190,8 @@ body {
             font-size:0.929em;
             .ss-r;
             color:@paars;
-            margin-top:10px;
+            float:left;
+            margin:0;
           }
           
           img {
@@ -1092,6 +1201,54 @@ body {
             }
             &.pull-right {
               margin-left:20px;
+            }
+          }
+             
+         .social {
+            margin:-2px 0 0 0;
+            padding:0;
+            float:right;
+            height:20px;
+            
+            li {
+              background:@paars;
+              width:20px;
+              height:20px;
+              display:inline-block;
+              padding:0;
+              overflow:hidden;
+              margin:0 -1px 0 0;
+              
+              a {
+                display:inline-block;
+                width:20px;
+                height:20px;
+                text-align:center;
+                color:#fff;
+                font-size:1em;
+                padding:0;
+                position:relative;
+                top:0px;
+                font-size:0.8em;
+              }
+              
+              &:hover {
+                background:@blauw;
+                
+                a {
+                  text-decoration:none;
+                }
+              }
+              
+              &.title {
+                font-size:0.929em;
+                .ss-r;
+                color:@paars;
+                background:none;
+                width:auto;
+                margin:0 5px 0 0;
+              }
+              
             }
           }
              
@@ -1562,6 +1719,11 @@ body {
                 text-decoration:none;
               }
             }
+            
+            .btn {
+              position:static!important;
+            }
+            
           }
         }
       }
@@ -1601,14 +1763,14 @@ body {
       
     }
     
-    &.beeldbank {
-      height:240px;
+    &.beeldbank, &.download {
+      height:260px;
       position:relative;
       text-align:center;
       
         div {
           width:33.333%;
-          height:120px;
+          height:130px;
           overflow:hidden;
           float:left;
           text-align:center;
@@ -1624,9 +1786,13 @@ body {
           &.large {
             width:66.666%;
           }
+          &.img {
+            width:100%;
+            height:260px;
+          }
         }
         
-        .icon-beeldbank {
+        .icon-beeldbank, .icon-download {
           width:100px;
           height:100px;
           text-align:center;
@@ -1641,6 +1807,10 @@ body {
           display:block;
           padding:25px;
           background:url("/media/img/icon-beeldbank.png") center center no-repeat #fff;
+          background-size:50% 50%;
+        }
+        .icon-download {
+          background:url("/media/img/icon-download.png") center center no-repeat #fff;
           background-size:50% 50%;
         }
         
@@ -1662,6 +1832,9 @@ body {
         
         }
         
+    }
+    &.download {
+      background:@paars;
     }
     
     
@@ -1825,6 +1998,16 @@ footer {
 }
 
 @media (max-width:765px) and (orientation:portrait) { 
+  
+  blockquote {
+    .media-body {
+      .social {
+        .title {
+          display:none!important;
+        }
+      }
+    }
+  }
 
   
   .detail-content .contentarea .content figure {
@@ -2392,6 +2575,10 @@ footer {
       
     }
   }
+ 
+ .vindjestudie .aside {
+   clear:both;
+ }
   
 }
 
@@ -2423,12 +2610,7 @@ footer {
           border-bottom:5px solid rgba(0, 0, 0, 0.2);     
       }
     }
-  }
-     
-  // #datepicker .ui-datepicker-calendar tr td span,
-  // #datepicker .ui-datepicker-calendar tr td a {
-    // padding-top:30%;    
-    
+  }    
       
 }
 
@@ -2462,6 +2644,20 @@ footer {
           }
         }
       }
+    }
+    
+    @media (orientation:portrait) {
+      .vindjestudie {
+      aside {
+        width:100%;
+        
+        .blok {
+          width:46%;
+          float:left;
+          margin-right:4%;
+        }
+      }
+    }
     }
     
 }
@@ -2697,6 +2893,10 @@ footer {
     
   }
   
+  .studiefilter {
+    height:auto!important;
+  }
+  
   footer {
     
     .divider {
@@ -2711,6 +2911,8 @@ footer {
     }
     
   }
+  
+  
   
  
 }
