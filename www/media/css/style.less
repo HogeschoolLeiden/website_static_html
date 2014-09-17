@@ -1360,6 +1360,146 @@ body {
   }
   
   
+  /* ==========================================================================
+   VIERKOLOMS LANDING / extended overzicht pagina
+   ========================================================================== */
+  #main.landing {
+    padding-top:30px;
+  
+    .divider {
+        display:block;
+        clear:both;
+      }
+  
+    .area {
+      display:block;
+      
+      
+      
+      h1 {
+        color:@paars;
+        font-size:3.429em;
+        .ss-sb;
+        margin:12px 0 7px 0;
+      }
+      
+      .article {
+        padding-top:150px;
+        position:relative;
+        padding-bottom:2px;
+        overflow:hidden;
+        
+        a {
+          text-decoration:none;  
+          border-bottom:1px solid #cccccc;
+          display:block;
+        }
+        
+        h2 {
+          font-size:1.286em;
+          color:@paars;
+          margin-top:20px;
+        }
+        
+        p {
+          color:@grijs;
+        }
+        
+        
+        figure {
+          position:absolute;
+          top:0;
+          left:0;
+          z-index:0;
+          width:100%;
+          height:auto;
+          overflow:hidden;
+          max-height:150px;
+          
+          img {
+            width:100%;
+          }
+        }
+        
+        .datum {
+          position:absolute;
+          top:25px;
+          left:-30px;
+          z-index:1;
+          background:#fff;
+          color:@paars;
+        }
+        
+        a:hover {
+          h2 {
+            text-decoration:underline;
+          }
+        }
+        
+      }
+      
+       ul {
+            padding:20px 0 5px 0px;
+            margin:0;
+                       
+            h2, strong.h2 {
+              font-size:1.214em;
+              .ss-sb;
+              color:@groen;
+              min-height:37px;
+              margin:0 0 12px 0;
+              display:block;
+            }
+            
+            h3, strong.h3 {
+              font-size:1em;
+              color:@groen;
+              .ss-sb;
+              margin-bottom:5px;
+            }
+                
+            li {
+              list-style-type:disc;
+              color:@groen;
+              float:none;
+              font-size:1em;
+              margin:0 0 0 15px;
+              width:90%;
+              border:none!important;
+              padding:0;
+              padding-left:5px;
+              
+              a {
+                color:@grijs;
+                font-size:1em;
+                display:block;
+                background:none;
+              }
+              
+              &.empty {
+                list-style-type:none;
+              }
+              
+              &.h2, &.h3 {
+                padding:0;
+                list-style-type:none;
+                margin-left:0;
+                width:90%;
+              }
+              
+            }
+          }
+      
+    }
+    
+    aside {
+      padding-top:72px;  
+    }
+    
+    
+  }
+  
+  
   
   /* ==========================================================================
    TEKST ITEM
@@ -1467,6 +1607,12 @@ body {
       margin:0;
       padding:10px 20px 0 20px;
       .ss-l;
+      
+      strong {
+        font-weight:normal;
+        .ss-li;
+      }
+      
     }
     .btn {
       position:absolute;
@@ -1935,7 +2081,6 @@ footer {
           &:before {
             position:relative;
             top:5px;
-            font-size:1.571em;
           }
           
           span {
@@ -1992,7 +2137,32 @@ footer {
       clear:both;
     }
     
-    
+  }
+  
+  #main {
+    &.landing {
+      .divider  {
+        display:block!important;
+      }
+      
+      .area {
+        width:46%;
+        margin-left:2%!important;
+        margin-right:2%!imprtant;
+        float:left;
+        
+        .article {
+          padding-top: 140px;
+        }
+      }
+      
+       .blok {
+        &:first-of-type {
+          margin-top:0px!important;
+        }
+      }
+      
+    }     
   }
   
 }
@@ -2614,6 +2784,7 @@ footer {
       
 }
 
+
 /* only tablet */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
   .detail-content .contentarea .content .share a {
@@ -2751,6 +2922,12 @@ footer {
                     font-size:1em;
                     display:block;
                     background:none;
+                    
+                    strong {
+                      font-weight:normal;
+                      .ss-sbi;
+                    }
+                    
                   }
                   
                   &.empty {
@@ -2916,6 +3093,19 @@ footer {
   
  
 }
+
+@media (min-width:992px) and (max-width:1199px) {
+  #main {
+    &.landing {
+      .area {
+        .article {
+          padding-top: 120px;
+        }
+      }
+    }
+  }
+}
+
 
 @media (min-width: 1200px) {
   
