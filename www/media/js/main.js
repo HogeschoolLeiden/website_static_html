@@ -5,6 +5,19 @@ $( document ).ready(function() {
 		$(this).ekkoLightbox(); 
 	});
 
+	$(".validate").validate({
+		errorElement:'span',
+		rules: {
+			email: {
+				required:true,
+				email:true
+			}
+		}
+	});
+	jQuery.extend(jQuery.validator.messages, {
+	    required: "Verplicht",
+	    email: "Incorrect"
+	});
 	
 	// dateCircleHeight ();
 // 	

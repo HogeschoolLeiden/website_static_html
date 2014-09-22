@@ -126,6 +126,287 @@ body {
   }
 }
 
+
+/* ==========================================================================
+   FORM / formulier / eforms
+   ========================================================================== */
+.form {
+  margin-top:20px;
+  position:relative;
+  margin-bottom:10px;
+  
+  .eforms-field, div.eforms-field {
+    width:100%;
+    padding:0;
+    border:none;
+    clear:none;
+    height:auto;
+    margin:0 0 25px 0;
+    position:relative;
+    
+    .ui-datepicker-trigger {
+      position:absolute;
+      right:7px;
+      bottom:7px;
+      cursor:pointer;
+      height:18px;
+      width:auto;
+    }
+    
+    .eforms-hint, span.error {
+      position:absolute;
+      right:0;
+      top:0;
+      font-size:1.3em;
+      color:@grijs;
+      margin:0;
+      font-style:normal;
+      .ss-r;
+    }
+    span.error {
+      color:red;
+      z-index:1000;
+      background:#fff;
+      display:block;
+      width:50%;
+      text-align:right;
+    }
+    
+    label {
+      margin:0 0 5px 0;
+      display:block;
+      float:none;
+      width:auto;
+      color:@paars;
+      .ss-sb;
+    }
+    
+    .eforms-req {
+      color:@paars;
+    }
+    
+    input, select, textarea {
+      width:100%;
+       .border-radius(0px);
+      border-color:@donkergrijs;
+      height:30px;
+      width:100%;
+      .ss-l;
+      color:@grijs;
+      padding: 7px 10px 5px;
+      font-size:14px;
+      background:#fff!important;
+      
+      &[type="checkbox"], &[type="radio"] {
+        width:auto;
+        height:auto;
+        padding:0;
+        border:none;
+      }
+      
+      
+      &:focus {
+        outline-width: 0;
+        outline: none;
+        box-shadow:none;
+      }
+      
+      &.error {
+        border-color:red;
+      }
+            
+    }
+    
+    textarea {
+      min-height:100px;
+    }
+    
+    select {
+      border:1px solid #999;
+      padding:3px 5px;
+    }
+    
+    input[type="file"] {
+      padding:0;
+    }
+    .bootstrap-filestyle {
+      width:100%;
+      position:relative;
+      
+      input {
+        width:100%;
+      }
+      
+      .group-span-filestyle {     
+        width:100px;
+        height:auto;
+        display:inline-block;
+         color:#fff;
+         position:absolute;
+         right:0;
+         bottom:0;
+         margin:0;
+         padding:0;
+           
+        label {
+          width:100px;
+          display:block;
+          position:static;
+           background:@paars;
+           color:#fff;
+           z-index:1000;
+           position:relative;
+           color:#fff;
+           height:30px;
+           font-size:16px!important;
+           .ss-r;
+           padding:5px 0 0 0;
+           margin:0;
+        }
+      }
+    }
+    
+    
+    &.checkboxes, &.radiobuttons {
+        
+        input {
+           &[type="checkbox"], &[type="radio"] {
+            margin:0 10px 0 0;
+            display:none;
+          }
+        }
+        
+      }
+    
+    &.checkboxes {
+      p {
+        font-size:1.3em;
+        color:@grijs;
+        .ss-r;
+        margin:10px 0;
+        
+        .instant-label {
+          font-size:1em;
+          color:@grijs;
+          .ss-r;
+          cursor:pointer;
+        }
+        
+      } 
+      
+      .instant-label:before {
+        content:"";
+        width:20px;
+        height:20px;
+        background:url("../img/checkbox.png") center center no-repeat;
+        background-size:20px 20px;
+        display:inline-block;
+        float:left;
+        margin:0 10px 0 0;
+      }
+      input[type="checkbox"]:checked + .instant-label:before {
+        background:url("../img/checkbox-checked.png") center center no-repeat;
+        background-size:20px 20px;
+      }
+    }
+    
+    &.radiobuttons {
+      p, li {
+        font-size:1.3em;
+        color:@grijs;
+        .ss-r;
+        margin:10px 0;
+        
+        .instant-label {
+          font-size:1em;
+          color:@grijs;
+          .ss-r;
+          cursor:pointer;
+        }
+        
+      } 
+      
+      .radiogroup {
+        list-style-type:none;
+        li {
+          padding:0;
+          background:none;
+        }
+      }
+      
+      .instant-label:before {
+        content:"";
+        width:20px;
+        height:20px;
+        background:url("../img/radiobutton.png") center center no-repeat;
+        background-size:20px 20px;
+        display:inline-block;
+        float:left;
+        margin:0 10px 0 0;
+      }
+      input[type="radio"]:checked + .instant-label:before {
+        background:url("../img/radiobutton-checked.png") center center no-repeat;
+        background-size:20px 20px;
+      }
+    }
+    
+    .eforms-likert-table {
+      td {
+        font-size: 1.3em;
+      }
+    }
+    
+    &:hover {
+      background:none;
+      background-color:transparent;
+    }
+    
+  }
+  
+  .eforms-text, div.eforms-text {
+    font-size:1.3em;
+    margin:10px 0;
+  }
+  
+  div.eforms-buttons {
+    padding:0;
+    margin:10px 0;
+  }
+  
+  input.btn {
+    position:relative!important;
+    background:@paars;
+    width:140px;
+    height:40px;
+    margin-left:0;
+    .ss-sb;
+    font-size:1.6em;
+   }
+  
+  
+}
+
+.lt-ie9 {
+  
+  .form {
+    .eforms-field, div.eforms-field {
+      
+      input {
+        &[type="checkbox"], &[type="radio"] {
+         display:inline-block;
+         float:left;
+        }
+      }
+      
+      .instant-label:before {
+        display:none;
+      }
+      
+    }  
+  }
+  
+}
+
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -349,6 +630,7 @@ body {
       .ss-l;
       color:@grijs;
       padding: 7px 10px 5px;
+      background:#fff;
       
       &:focus {
         outline-width: 0;
