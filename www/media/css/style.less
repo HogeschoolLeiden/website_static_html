@@ -1751,6 +1751,12 @@ body {
               padding:0;
               padding-left:5px;
               
+              list-style-type:none;
+              background:url("../img/li-groen.png") 0px 6px no-repeat;
+              background-size:6px 6px;
+              margin-left:0;
+              padding-left:20px;
+              
               a {
                 color:@grijs;
                 font-size:1em;
@@ -1779,6 +1785,14 @@ body {
     }
     
     
+  }
+  
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+   
+   #main.landing aside {
+     padding-top:71px;
+   }
+   
   }
   
   
@@ -1861,6 +1875,7 @@ body {
     overflow:hidden;
     position:relative;
     padding-bottom:70px;
+    height:auto;
     min-height:240px;
     cursor:pointer;
     margin:20px 0;
@@ -1881,7 +1896,7 @@ body {
         border-width:0 0 8px 0;
         border-image: url('../img/border-dotted-horz-8-wit.png') 0% 0% 100% 0 round;
         position:absolute;
-        left:0;
+        left:5px;
         bottom:0;
       }
     }
@@ -2278,6 +2293,13 @@ body {
   }
 }
 
+.lt-ie9, .lt-ie10, .lt-ie11 {
+  .blok {
+      min-height:0px;
+    }
+}
+
+
 
 /* ==========================================================================
    Footer
@@ -2336,6 +2358,13 @@ footer {
        
        &.thirdnav {
          float:right;
+         padding-right:0;
+         
+         li {
+           &:last-child {
+             margin-right:0;
+           }
+         }
        }
        
      }
@@ -2355,7 +2384,6 @@ footer {
           width:30px;
           height:30px;
           display:block;
-          background:@paars;
           color:#fff;
           text-align:center;
           text-decoration:none;
@@ -2370,14 +2398,119 @@ footer {
             text-indent:-9999px;
           }
           
-          &:hover {
-            background:@blauw;
+        }
+        
+        a {
+          background:url("../img/icon-social.png") left top no-repeat @paars;
+          background-size:90px 60px;
+        }
+        
+        &.facebook {
+          a {
           }
         }
+         &.twitter {
+          a {
+            background-position:-30px 0px;
+          }
+        }
+         &.googleplus {
+          a {
+            background-position:-60px 0px;
+          }
+        }
+        &.linkedin {
+          a {
+            background-position:0px -30px;
+          }
+        }
+        &.instagram {
+          a {
+            background-position:-30px -30px;
+          }
+        }
+        &.youtube {
+          a {
+             background-position:-60px -30px;
+          }
+        }
+        
+        &:hover {
+          a {
+            background-color:@groen;
+          }
+        }
+        
       } 
    }
    
  }
+ 
+ /* browser hacks for larg bg images */
+ 
+ 
+ .lt-ie9 {
+   
+  #main.landing .area ul li, 
+  .navbar .container #mainnav.nav li ul.dropdownmenu li ul li {
+    background-image:url("../img/li-groen-ie.png");
+  }
+  
+  .overzichtlijst .media .media-body .tags li, 
+  .detail-content .contentarea .content ul li,
+  .tekstitem ul li {
+     background-image:url("../img/li-ie.png");
+  }
+  
+  .more {
+    background-image:url("../img/more-arrow-8.png");
+  }
+   
+  footer {
+    .social {
+      li {
+        a  {
+          background:url("../img/icon-social-ie8.png") left top no-repeat @paars;
+          background-size:90px 60px;
+        }
+        
+         &.twitter {
+          a {
+            background-position:-30px 0px;
+          }
+        }
+         &.googleplus {
+          a {
+            background-position:-60px 0px;
+          }
+        }
+        &.linkedin {
+          a {
+            background-position:0px -30px;
+          }
+        }
+        &.instagram {
+          a {
+            background-position:-30px -30px;
+          }
+        }
+        &.youtube {
+          a {
+             background-position:-60px -30px;
+          }
+        }
+        
+        &:hover {
+          a {
+            background-color:@groen;
+          }
+        }
+        
+      }
+    }
+  }
+}
+ 
 
 
 /* ==========================================================================
@@ -2908,7 +3041,6 @@ footer {
           width:30px;
           height:30px;
           display:block;
-          background:@paars;
           color:#fff;
           text-align:center;
           text-decoration:none;
@@ -2924,9 +3056,6 @@ footer {
             text-indent:-9999px;
           }
           
-          &:hover {
-            background:@groen;
-          }
         }
       } 
    }
@@ -3199,6 +3328,12 @@ footer {
                   padding:0;
                   padding-left:5px;
                   
+                  list-style-type:none;
+                  background:url("../img/li-groen.png") 0px 6px no-repeat;
+                  background-size:6px 6px;
+                  margin-left:0;
+                  padding-left:20px;
+                  
                   a {
                     color:@grijs;
                     font-size:1em;
@@ -3221,6 +3356,8 @@ footer {
                     list-style-type:none;
                     margin-left:0;
                     width:90%;
+                    
+                    background:none;
                   }
                   
                 }
