@@ -463,6 +463,7 @@ body {
    ========================================================================== */
 #breadcrumbs {
   background:@paars;
+  height:29px;
   
   .container {
     .row {
@@ -511,6 +512,26 @@ body {
     .ss-l;
     color:@paars;
     padding-bottom:10px;
+    
+    .icon {
+      display:block;
+      width:40px;
+      height:40px;
+      background:@paars;
+      .border-radius(50%);
+      text-align:center;
+      float:right;
+      margin:0 0 20px 20px;
+      padding-top:20px;
+      
+      img {
+        width:20px;
+        height:20px;
+        margin-top:-25px;
+      }
+      
+    }
+    
   }
   
   ul {
@@ -551,6 +572,29 @@ body {
       
     }
     
+  }
+  
+}
+
+.lt-ie9 {
+  
+  .subnav {
+    h2 {
+      .icon {
+        position:relative;
+        
+        &:after {
+          content:"";
+          width:40px;
+          height:40px;
+          position:absolute;
+          left:0;
+          top:0;
+          background:url("../img/icon-circle-ie8.png") center center no-repeat;
+        }
+        
+      }
+    }
   }
   
 }
@@ -897,6 +941,267 @@ body {
   padding:100px 0 30px 0;
 }
 
+/* ==========================================================================
+   HOME homepage
+   ========================================================================== */
+.home, .lectoraat {
+  padding-top:0px!important;
+  
+  
+  .swiper-container {
+    position:static;
+    margin-bottom:-200px;
+    
+    .swiper-wrapper {
+       
+       .swiper-slide {
+         position:relative;
+         
+         img {
+           position:absolute;
+           left:0;
+           top:0;
+           width:100%;
+         }
+         
+       }
+        
+    }
+    
+    .swipenav {
+      width:100px;
+      height:100px;
+      background:transparent;
+      top:-460px;
+      position:relative;
+      z-index:2000;
+      font-size:2.5em;
+      color:#fff;
+      padding-top:30px;
+      cursor:pointer;
+      .border-radius(50%);
+      border:2px solid #fff;
+      
+      &.prev {
+        left:-588px;
+        padding-left:30px;
+      }
+      &.next {
+        right:-588px;
+        padding-right:30px;
+      }
+      
+      &:hover {
+        border-color:@paars;
+        color:@paars;
+      }
+      
+    }
+    
+    .slider-pagination {
+      position:relative;
+      top:-290px;
+      width:300px;
+      height:10px;
+      margin:0 auto;
+      left:-295px;
+      text-align:center;
+      z-index:3000;
+      
+      span {
+        width:10px;
+        height:10px;
+        display:inline-block;
+        background:@lichtpaars;
+        .border-radius(50%);
+        margin:0 3px;
+        cursor:pointer;
+      
+        &.swiper-active-switch {
+          background:@paars;
+        }
+      }
+    }
+    
+  }
+  
+  .blok {
+    min-height:286px;
+    .btn {
+      font-size:1em;
+    }
+  }
+  
+  .slide-content {
+    margin-top:30px;
+    
+    .highlighted {
+      margin-top:0;
+      float:left;
+      margin-left:8.33333%;
+      height:auto;
+      width:380px;
+      
+      .media-body {
+        position:relative;
+        .border-radius(50%);
+        margin:0;
+        text-align:left;
+        
+        &:before {
+          content:"";
+          display:block;
+          padding-top:100%;
+        }
+        
+        a, .contentarea {
+          position:absolute;
+          top:0;
+          left:0;
+          bottom:0;
+          right:0;
+          text-decoration:none;
+          padding: 26px 30px;
+          padding:60px 50px 60px 60px;
+          z-index:2000;          
+        }
+        
+        h1 {
+          color:@paars;
+          font-size:1.571em;
+          margin-bottom:0;
+        }
+        
+        p {
+          border-color:@paars;
+          border-image:url("../img/border-dotted-vert-5-paars-2.png") 0% 0% 0% 100% round;
+        }
+        
+        .datum {
+          background:@paars;
+          left:310px;
+          top:60px;
+        }
+                
+      }
+      
+    }
+    
+  }
+}
+
+.lt-ie9 {
+  
+  .slide-content {
+    
+    .highlighted {
+      
+      .media-body {
+        background:url("../img/highlight-round-ie8.png") center center no-repeat;
+        height:350px;
+        
+        .contentarea {
+          .datum {
+            background:url("../img/datum-groot-paars-ie8.png") center center no-repeat;
+          }
+        }
+        
+      }
+    }
+  }
+  
+  .home {
+    .blok {
+      height:286px;
+    }
+  }
+  
+  .home .swiper-container, .lectoraat .swiper-container {
+    
+    .swipenav {
+      border:none;
+      height:103px;
+      
+      &.prev {
+        background:url("../img/swiper-nav-prev-ie8.png") top right no-repeat;
+      }
+      &.next {
+        background:url("../img/swiper-nav-next-ie8.png") top left no-repeat;
+      }
+      
+      &:hover {
+        color:#fff;
+      }
+      
+    }
+    
+  }
+  
+}
+
+.lt-ie10, .lt-ie11, .ie11 {
+  
+  .home {
+    .blok {
+      min-height:inherit;
+      height:286px!important;
+    }
+  }
+  
+}
+
+html[data-useragent*='MSIE 10.0'] {
+ .home {
+    .blok {
+      min-height:inherit;
+      height:286px!important;
+    }
+  }
+}
+
+
+
+/* ==========================================================================
+   LECTORATEN lectoraat, website in website
+   ========================================================================== */
+.lectoraat {
+  
+  .swiper-container {
+    .slider-pagination {
+      position:relative;
+      top:-290px;
+      width:300px;
+      height:10px;
+      margin:0 auto;
+      left:auto;
+      right:-285px;
+      text-align:center;
+      z-index:3000;
+      
+    }
+  }
+  
+  .slide-content {
+    
+    .highlighted {
+      float:left;
+      margin-left:58.333%;
+      
+      .media-body {
+        
+        .datum {
+          background:@paars;
+          left:-60px;
+          top:60px;
+        }
+                
+      }
+      
+    }
+    
+  }
+  
+}
 
 /* ==========================================================================
    Background image
@@ -1641,6 +1946,15 @@ body {
              &.fa-google-plus {
               background:#d6492b;
             }
+             &.fa-linkedin {
+               background:#6694bf;
+             }
+             &.fa-envelope {
+               background:#48cdff;
+             }
+             &.fa-file {
+               background:#e07760;
+             }
             
             &:hover {
               background:@blauw!important;
@@ -2014,6 +2328,20 @@ body {
         
       }
       
+      &.paars {
+        background:@paars;
+        
+        a {
+          color:#fff;
+        }
+        
+        .btn {
+          color:#fff;
+          border-color:#fff;
+        }
+        
+      }
+      
       &.lichtpaars {
         background:@lichtpaars;
         color:@paars;
@@ -2133,7 +2461,8 @@ body {
            position:absolute;
            left:20px;
            right:20px;
-           bottom:-4px;
+           bottom:auto;
+           top:-4px;
            z-index:0;
           }
           
@@ -2230,6 +2559,19 @@ body {
         
       }
       
+      p {
+        position:relative;
+        left:16px;
+        padding-right:20px;
+        padding-left:4px;        
+      }
+      .btn {
+          position:static;
+          width:auto;
+          display:inline-block;
+          margin:0 0 20px 20px;
+        }
+      
       &:hover {
         background-color:@lichtpaars!important;
       }
@@ -2244,9 +2586,10 @@ body {
     }
     
     &.beeldbank, &.download {
-      height:260px;
+      height:260px!important;
       position:relative;
       text-align:center;
+      padding-bottom:0;
       
         div {
           width:33.333%;
@@ -2315,6 +2658,258 @@ body {
     }
     &.download {
       background:@paars;
+
+      
+    }
+    
+    &.nieuws, &.links, &.text, &.twitter {
+      padding-bottom:0;
+      cursor:auto;
+      
+      h1 {
+        font-size:1.714em;
+        color:@paars;
+        text-transform:none;
+        padding-bottom:15px;
+      }
+      
+      .media {
+        border-top:1px solid @lichtpaars;
+        margin:0;
+        padding:15px 20px 10px 20px;
+        position:relative;
+        
+        .media-object {
+          width:60px;
+          height:60px;
+          margin-right:15px;
+          background:#2d1661;
+        }
+        .media-body {
+         padding:0;
+         font-size:1em;
+         color:@paars;
+         .ss-r;
+         line-height:1.571em;
+         position:relative;
+         top:-4px;
+        }
+        .datum {
+          position:absolute;
+          left:30px;
+          top:25px;
+        }
+        
+        &:hover {
+          .media-body {
+            text-decoration:underline;
+          }
+        }
+      }
+      
+      &:hover {
+        background:#fff!important;
+      }
+    }
+    
+    &.links, &.text {
+      height:auto!important;
+      min-height:0;
+      background:#fff;
+      
+      ul {
+          margin:0;
+          padding-left:0;
+          list-style-type:none;
+          
+          li {
+            padding-left:40px;
+            background:url("../img/li.png") 22px 6px no-repeat;
+            background-size:6px 6px;
+          
+            a {
+              color:@grijs;
+              
+              &:hover {
+                text-decoration:underline;
+              }
+            }
+            
+          }
+          
+        }
+        
+    }
+    
+    &.text {
+      padding:20px;
+      
+      h1 {
+        padding:0;
+        &:after {
+          display:none
+         }
+      }
+      .more {
+        display:inline-block;
+        &:hover {
+          text-decoration:underline;
+        }
+      }
+    }
+    
+    &.twitter {
+      
+      .twitteritem {
+        h2 {
+          font-size:1.071em;
+          .ss-sb;
+          span {
+            font-size:0.933em;
+          }
+        }
+        p {
+          margin-bottom:5px;
+          a {
+            display:inline-block;
+            &:hover {
+              text-decoration:underline;
+            }
+          }
+        }
+        a {
+          display:inline-block;
+          &:hover {
+              text-decoration:underline;
+            }
+        }
+      }
+      
+    }
+    
+    
+    &.snelkiezer {
+      padding-bottom:10px;
+      cursor:auto;
+      
+      h1 {
+        color:#fff;
+        &:after {
+          width:25%;
+        }
+      }
+      h2 {
+        cursor:auto;
+      }
+      h2, label {
+        color:#fff;
+        font-size: 1.714em;
+      }
+      label {
+        margin:0;
+        padding:0 0 10px 0;
+        display:block;
+        .ss-l;     
+        cursor:pointer;  
+      }
+      
+      div {
+        padding:10px 20px;
+        h2 {
+          padding:0 0 10px 0;
+        }
+        
+        ul  {
+          list-style-type:none;
+          margin:0;
+          padding:0;
+          
+          li {
+            float:left;
+            margin:0 10px 10px 0; 
+            
+             &:last-child {
+                margin-right:0;
+              }
+          }
+        }
+        
+        &.interesse {
+          padding-right:0;
+        }
+        
+        &.vorm {
+          padding-left:0;
+          padding-right:0;
+          margin-left:-5%;
+          
+          ul {
+            width:110%;
+          }
+        }
+        
+        &.zoeken {
+          padding-top:0;
+        }
+        
+      }
+      
+      .btn {
+        position:static;
+        font-size:0.857em;
+        border:1px solid @lichterpaars!important;
+        background:@lichterpaars;
+        padding:5px 10px;
+        .ss-r;
+        text-transform:none!important;
+        
+        &:hover {
+         background:@paars;
+         border:1px solid #fff!important; 
+        }
+      }
+      
+      form {
+        margin:0;
+        
+        .form-group {
+          padding:0;
+          margin:0;
+          
+          input {
+            background:@lichterpaars;
+            color:#fff;
+            border:1px solid @lichterpaars;
+            font-size:0.857em;
+          }
+          
+        }
+        
+        .btn {
+          background:#fff;
+          border:1px solid #fff!important;
+          position:absolute;
+          left:auto;
+          color:@paars!important;
+          text-transform:lowercase;
+          font-family:'FontAwesome';
+          font-size: 1.357em;
+          padding-top:3px;
+          width:15%;
+          top:auto;
+          bottom:0;
+          
+          &::first-letter {
+            text-transform:none!important;
+          }
+          
+          &:hover {
+            background:#fff!important;
+          }
+          
+        }
+      }
+      
     }
     
     
@@ -2330,9 +2925,17 @@ body {
   }
 }
 
-.lt-ie9, .lt-ie10, .lt-ie11 {
+.lt-ie9, .lt-ie10, .lt-ie11, .ie11 {
   .blok {
       min-height:0px;
+      height:auto;
+    }
+}
+
+html[data-useragent*='MSIE 10.0'] {
+ .blok {
+      min-height:inherit;
+      height:auto;
     }
 }
 
@@ -2488,9 +3091,60 @@ footer {
  
  .lt-ie9 {
    
+   .highlighted .media-body .datum {
+     background:url("../img/datum-groot-blauw-ie8.png") center center no-repeat;
+   }
+   .overzichtlijst .media .datum {
+      background:url("../img/datum-klein-paars-ie8.png") center center no-repeat;
+   }
+   .info.blok .datum {
+     background:url("../img/datum-groot-paars-ie8.png") center center no-repeat;
+   }
+   .detail-content .contentarea .content .datum {
+    background:url("../img/datum-klein-paars-ie8.png") center center no-repeat;
+   }
+   
   #main.landing .area ul li, 
   .navbar .container #mainnav.nav li ul.dropdownmenu li ul li {
     background-image:url("../img/li-groen-ie.png");
+  }
+  
+  #main.vindjestudie .studiefilter ul li {
+    background:url("../img/studiefilter-zoeken-bg-ie8.png") left center no-repeat @lichterpaars;
+  }
+  
+  #main.vindjestudie .studiefilter ul li label {
+    &:before {
+       background:url("../img/input-bg-ie8-2.png") center center no-repeat;
+    }
+  }
+  
+  #main.vindjestudie .studiefilter ul li input[type="checkbox"] {
+   width:auto;
+   height:auto; 
+   margin:8px 0 0 8px;
+  }
+  
+
+  
+   #main.vindjestudie .overzichtlijst .media .media-object {
+     background:url("../img/datum-groot-paars-ie8.png") center center no-repeat;
+   }
+  
+  #main.vindjestudie .overzichtlijst .media .media-object img {
+    position:relative;
+    margin-top:-30px;
+    top:50%;
+  }
+  
+  #main.landing .area .article .datum {
+    background:url("../img/datum-groot-wit-ie8.png") center center no-repeat;
+  }
+
+  .radiogroup {
+    li {
+      background:none!important;
+    }
   }
   
   .overzichtlijst .media .media-body .tags li, 
@@ -2548,7 +3202,15 @@ footer {
   }
 }
  
-
+.lt-ie10 {
+  
+  #main.vindjestudie .overzichtlijst .media .media-object img {
+    position:relative;
+    margin-top:-30px;
+    top:50%;
+  }
+  
+}
 
 /* ==========================================================================
    MEDIA QUERIES
@@ -2561,6 +3223,12 @@ footer {
     width:46%;
     margin:10px 2%!important;
     float:left;
+    
+    &.snelkiezer, &.vrij {
+      width:100%;
+      margin-left:0!important;
+      margin-right:0!important;
+    }
   }
   
   .detail-content .contentarea .content figure.gallery a {
@@ -2644,6 +3312,28 @@ footer {
     }
     
   }
+  
+  #main {
+    &.home, &.lectoraat {
+      .col-xs-6, .col-xs-12 {
+        width:100%;
+      }
+      
+      .blok {
+        h1 {
+          font-size:2.2em;
+        }
+      }
+      
+      .slide-content {
+        margin-top:50%!important;
+        margin-bottom:240px!important;
+      }
+      
+    }
+  }
+  
+  
   
 }
 
@@ -2835,6 +3525,95 @@ footer {
   .blok {
     &.info {
       margin-left:0;
+    }
+    
+    &.snelkiezer {
+      div.vorm {
+        padding-left:20px;
+      }
+    }
+    
+  }
+  
+  
+  #main {
+    &.home, &.lectoraat {
+      
+      .swiper-container {
+        height:auto!important;
+      }
+      
+      .swiper-wrapper {
+        height:auto!important;
+      }
+      
+      .swiper-slide {
+        height:auto!important;
+      }
+      
+      .slide-content {
+        //margin-top:50%;
+        background:#fff;
+        margin-top:30%;
+        margin-bottom:200px;
+        
+         .highlighted {
+          
+          margin-left:auto;
+          width:100%;
+          
+          .slider-text {
+            padding:0;
+            .border-radius(0);
+            background:none;
+            height:auto;
+            
+            .datum {
+              width:40px;
+              height:40px;
+              line-height:0.857em;
+              padding:9px 0 0 0;
+              font-size:1em;
+              
+              left:0;
+              top:0;
+              margin-top:-30px;
+              
+              span {
+                font-size:0.786em;
+                display:block;
+                text-transform:uppercase;
+              }
+            }
+            
+            &:before {
+              display:none;
+            }
+            
+            a, .contentarea {
+              padding:0;
+              height:auto;
+            }
+          }
+           
+        } 
+      }
+      
+      .slider-pagination {
+        display:none;
+      }
+      .swipenav {
+        top:40px!important;
+        &.prev {
+          left:-60px!important;
+          padding-left:40px;
+        }
+        &.next {
+          right:-60px!important;
+          padding-right:40px;
+        }
+      }
+      
     }
   }
   
@@ -3135,6 +3914,14 @@ footer {
 }
 
 
+@media (min-width:768px) and (max-width: 991px) {
+  
+  .detail-content .contentarea .content .share a span {
+    font-size:0.68em;
+  }
+  
+}
+
 @media (max-width: 991px) {
   .btn.back {
     margin-top:-50px;
@@ -3179,6 +3966,14 @@ footer {
       }
       
     }
+    
+    &.snelkiezer {
+      div.vorm {
+        margin-left:0;
+      }
+    }
+    
+    
   }
   
   .highlighted {
@@ -3197,6 +3992,32 @@ footer {
  .vindjestudie .aside {
    clear:both;
  }
+  
+   #main {
+    
+      &.home, &.lectoraat {
+        
+        .swiper-container {
+          .swipenav {
+            position:absolute;
+            top:171px;
+            
+            &.prev {
+              left:-50px;
+            }
+            &.next {
+              right:-50px;
+            }
+            
+          }
+        }
+        .slider-pagination {
+          left:-125px;
+        }
+        
+      }
+    
+  }
   
 }
 
@@ -3267,17 +4088,48 @@ footer {
     
     @media (orientation:portrait) {
       .vindjestudie {
-      aside {
-        width:100%;
-        
-        .blok {
-          width:46%;
-          float:left;
-          margin-right:4%;
+          aside {
+            width:100%;
+            
+            .blok {
+              width:46%;
+              float:left;
+              margin-right:4%;
+            }
+          }
         }
+    }
+    
+    #main {
+    
+      &.home, &.lectoraat {
+        
+        .slide-content {
+          margin-top:15px;
+        }
+        
+        .swiper-container {
+          .swipenav {
+            position:absolute;
+            top:171px;
+            
+            &.prev {
+              left:-50px;
+            }
+            &.next {
+              right:-50px;
+            }
+            
+          }
+        }
+        .slider-pagination {
+          top: -305px;
+        }
+        
       }
-    }
-    }
+    
+  }
+    
     
 }
 
@@ -3309,6 +4161,7 @@ footer {
           
           ul.dropdownmenu {
             display:none!important;
+            
             
             list-style-type:none;
             width:847px;
@@ -3559,7 +4412,50 @@ footer {
         }
       }
     }
+    
+    &.home, &.lectoraat {
+      
+      .swiper-container {
+        .swipenav {
+          position:absolute;
+          top:171px;
+          
+          &.prev {
+            left:-50px;
+          }
+          &.next {
+            right:-50px;
+          }
+          
+        }
+      }
+      .slider-pagination {
+        left:-220px;
+      }
+      
+      .blok {
+        font-size:85%;
+        
+        &.snelkiezer {
+          
+          .vorm {
+            padding-left:30px;
+          }
+          
+          a.btn, input {
+            font-size:90%;
+          }
+        }
+        
+      }
+    }
+    
   }
+  
+  .detail-content .contentarea .content .share a span {
+    font-size:0.68em;
+  }
+  
 }
 
 
