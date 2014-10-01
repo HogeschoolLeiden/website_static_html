@@ -96,6 +96,115 @@ body {
   
 }
 
+
+/* ==========================================================================
+   PAGER pagination
+   ========================================================================== */
+.pager {
+  text-align:left;
+  margin:15px 0 -15px 0;
+  padding:0 10px;
+  
+  ul {
+    padding:0;
+    
+    li {
+      margin:0 7px 0 0;
+      
+      span,a {
+        .ss-r;
+        font-size:1em;
+        background:@paars;
+        border:none;
+        color:#fff;
+        width:30px;
+        height:30px;
+        .border-radius(50%);
+        padding:4px 0 0 0;
+        text-align:center;
+      }
+      span {
+        background:@groen;
+      }
+      
+      &.pager-previous, &.pager-next {
+        position:relative;
+        
+        span, a {
+          width:30px;
+          height:30px;
+          text-indent:-9999px;
+          display:inline-block;
+          background:@paars;
+          position:relative;
+          z-index:1;
+          background:transparent;
+          
+          &:after {
+            position:absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            top:0;
+            display:block;
+            z-index:1;
+          }
+        }
+        
+         &:after {
+           display:inline-block;
+           position:absolute;
+           left:0;
+           top:0;
+           right:0;
+           bottom:0;
+           text-align:center;
+           color:#fff;
+           .ss-r;
+           font-size:1.429em;
+           z-index:0;
+           width:30px;
+           height:30px;
+           background:@paars;
+           .border-radius(50%);
+           margin-top:-5px;
+           padding-top:3px;
+         }
+        
+      }
+      &.pager-previous {
+        &:after {
+          content:"«";
+        }
+      }
+      &.pager-next {
+        &:after {
+          content:"»";
+        }
+      }
+      
+      &:hover {
+        a {
+          background:@groen;
+        }
+        
+        &.pager-previous, &.pager-next {
+          &:after {
+            background:@groen;
+          }
+          
+          a {
+            background:transparent;
+          }
+        }
+        
+      }
+      
+    }
+  }
+}
+
+
 /* ==========================================================================
    MORE
    ========================================================================== */
@@ -422,6 +531,7 @@ body {
       
       .navbar-toggle {
         background:@groen;
+        z-index:6000;
         
         .icon-bar {
           background:#fff;
@@ -450,9 +560,69 @@ body {
         height:50px;
         padding:0;
         margin:0;
+        position:relative;
+        z-index:1;
       }
-      
+            
     }
+    
+    &.lectoraattitle {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        z-index:0;
+        
+        .row {
+          height:100%;
+          
+          .col-md-7 {
+            height:100%;
+            
+            .table {
+                display: table;
+                height: 100%;
+                width: 100%;
+                
+                .table-cell {
+                  display: table-cell;
+                  height: 100%;
+                  vertical-align: middle;
+                  
+                  .centered {
+                    display: inline-block;
+                    position: relative;
+                    
+                    h1 {
+                      color:@paars;
+                      .ss-l;
+                      font-size:2.286em;
+                      margin:0;
+                      
+                      span {
+                        .ss-sb;
+                        display:block;
+                        line-height:0.95em;
+                      }
+                      
+                      a {
+                        color:@paars;
+                        text-decoration:none;
+                      }
+                    }
+                    
+                    
+                  }
+                  
+                }
+                
+              }
+            
+          }
+          
+        }
+        
+      }
     
   }
   
@@ -521,7 +691,7 @@ body {
       .border-radius(50%);
       text-align:center;
       float:right;
-      margin:0 0 20px 20px;
+      margin:0;
       padding-top:20px;
       
       img {
@@ -834,6 +1004,7 @@ body {
           background:@lichterpaars;
           color:#fff;
           padding:5px 0;
+          .ss-sb;
           
         span,a {
           padding-top:5px;
@@ -863,6 +1034,34 @@ body {
               border:0;
             }
           }
+        }
+        
+        &.fc-other-month .fc-day-number {
+            opacity:1;
+            color:@lichterpaars;
+          }
+        
+        &.fc-highlighted {
+          background:@blauw;
+          .border-radius(50%);
+          
+          span, div {
+            
+            
+            div {
+              border:0;
+            }
+          }
+          
+          &.fc-other-month {
+            background:#5a4d79;
+            color:@paars;
+            
+            .fc-day-number {
+              color:@paars;
+            }
+          }
+          
         }
         
         &.ui-state-disabled  {
@@ -3289,6 +3488,19 @@ footer {
 
 @media (max-width:765px) and (orientation:portrait) { 
   
+  .navbar {
+    .container {
+      &.lectoraattitle {
+        
+        .col-md-7 {
+          margin-left:16.666%;
+          padding-right:45px;
+        }
+
+      }
+    }
+  }
+  
   blockquote {
     .media-body {
       .social {
@@ -3341,6 +3553,20 @@ footer {
 
 
 @media (max-width:765px) {  
+ 
+  .navbar {
+    .container {
+      &.lectoraattitle {
+        height:50px;
+        
+        h1 {
+          font-size:1em!important;
+          position:relative;
+          top:2px;
+        }
+      }
+    }
+  }
   
   #breadbrumbs {
     height:28px;
@@ -3558,8 +3784,7 @@ footer {
         margin-bottom:200px;
         
          .highlighted {
-          
-          margin-left:auto;
+          margin-left:auto!important;
           width:100%;
           
           .slider-text {
@@ -3620,6 +3845,7 @@ footer {
 }
 
 @media (min-width:768px) {
+
   
   /* main */
  #main {
@@ -3721,6 +3947,11 @@ footer {
           
         }
         
+        &.lectoraten {
+         top:99px;
+         right:124px;
+        } 
+        
       }
       
     }
@@ -3768,6 +3999,10 @@ footer {
         
       }
       
+    }
+    
+    &.lectoraattitle {
+      height:128px;
     }
    }
  }
@@ -3923,6 +4158,22 @@ footer {
 }
 
 @media (max-width: 991px) {
+  
+  .navbar {
+    .container {
+      &.lectoraattitle {
+        
+        .col-md-7 {
+          padding-right:45px;
+        }
+        
+        h1 {
+          font-size:1.5em!imporant;
+        }
+      }
+    }
+  }
+  
   .btn.back {
     margin-top:-50px;
     min-width:150px;
@@ -4015,13 +4266,20 @@ footer {
           left:-125px;
         }
         
-      }
+      }    
+      
+      &.lectoraat {
+        .slider-pagination {
+          left:245px;
+        }
+      }  
     
   }
   
 }
 
 @media (max-width: 991px) and (orientation : portrait)  {
+  
   
    .btn.back {
       margin-top:-70px;
@@ -4051,11 +4309,47 @@ footer {
     }
   }    
       
+  #main {
+      
+      &.lectoraat {
+        .swiper-container {
+          .swiper-wrapper {
+            .swiper-slide {
+              .slide-content {
+                .highlighted {
+                  margin-left:41.666%%;
+                }
+              }
+            }
+          }
+        }
+        
+        .slider-pagination {
+          left:125px;
+        }
+        
+      }
+    
+  } 
+     
+   
 }
 
 
 /* only tablet */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+  
+  .navbar {
+    .container {
+      &.lectoraattitle {
+        
+        h1 {
+          font-size:1.5em!important;
+        }
+      }
+    }
+  }
+  
   .detail-content .contentarea .content .share a {
       padding: 5px 2px 5px 10px;
       
@@ -4130,7 +4424,6 @@ footer {
     
   }
     
-    
 }
 
 @media (min-width: 992px) {
@@ -4168,7 +4461,7 @@ footer {
             height:auto;
             position:absolute;
             right:0;
-            z-index:3000;
+            z-index:5000;
             border:1px solid @paars;
             background:#fff;
             padding:0;
@@ -4267,6 +4560,11 @@ footer {
       
       &#utilities {
         right:285px;
+        
+        &.lectoraten {
+         top:99px;
+         right:174px;
+        } 
         
       }
       
@@ -4404,6 +4702,17 @@ footer {
 }
 
 @media (min-width:992px) and (max-width:1199px) {
+  
+  .navbar {
+    .container {
+      &.lectoraattitle {
+        h1 {
+          font-size:100%;
+        }
+      }
+    }
+  }
+  
   #main {
     &.landing {
       .area {
@@ -4449,6 +4758,11 @@ footer {
         
       }
     }
+    &.lectoraat {
+       .slider-pagination {
+          left:270px;
+        }
+    }
     
   }
   
@@ -4480,6 +4794,11 @@ footer {
       
       &#utilities {
         right:285px;   
+               
+        &.lectoraten {
+         top:99px;
+         right:174px;
+        } 
       }
       
     }
